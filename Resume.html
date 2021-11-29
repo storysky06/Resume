@@ -1,0 +1,89 @@
+<!DOCTYPEHTML>
+<html>
+    <head>
+    <meata charset="ucf-8"></meata>
+    <title>報名履歷表</title>
+    <style type="text/css">
+    
+    .content{width:1000px;margin-left:auto;margin-right:auto;}
+    h3{font-size:24px;text-decoration: underline;line-height: 10px;font-family: "微軟正黑體";}
+    div{font-size: 20px;line-height: 32px;font-family: "微軟正黑體";}
+
+    .box{width:560px;padding:10px;margin:10px;
+        background-color:none;display: inline-block;
+        vertical-align;}
+    .box1{width:280px;padding:10px;margin:10px;
+        background-color:none;display: inline-block;
+        vertical-align: top;margin:0px;}
+    .head{background-color: #1a0044;color: white;
+        font-weight:bold;font-size:30px;text-align: center;
+        line-height: 50px;margin: top 10PX;}
+    .button{height: 30px;}
+    .JB{background-color:none;width:50px;height:60px}
+    @media screen and (max-width:600px){
+		.head{font-size:24px;}
+		.content{width:100%;text-align:center;}
+        .box{width: 80%;}
+        h3{font-size: 16px;}
+		}
+		
+
+    </style>
+    <script type="text/javascript">
+function toggleMenu(){
+	var menu=document.getElementById("menu");
+	menu.classList.toggle("hide");
+	/*
+	if (menu.style.display=="none"){
+		menu.style.display="block"
+	}else{
+		menu.style.display="none"
+	}
+*/
+}
+    function getdata(nb){
+    var data=new XMLHttpRequest(); 
+    data.open("get","http://127.0.0.1:8080/"+nb+".html"); 
+    data.send();
+    data.onload=function(){
+	var content=document.getElementById("content");
+	content.innerHTML=this.responseText;	
+    };
+	}
+    </script>
+    </head>
+    <body style="margin: 0px;background-color:#e6e6e6";>
+        <div id="son"><img isrc="sonmer.jpg"/></div>
+      
+        <div class="head">報名履歷表</div>
+            <div class="content">
+                <div class="box1">
+                <img src="bighead.jpg";background-color:none/>
+                
+                <h3><a href="https://www.facebook.com/settings?tab=account&section=username">廖庭鋒/Dylan</a></h3>
+                <div></div>
+                <button onclick="getdata(1)";onclick="toggleMenu(1)">個人履歷</button>
+                <div></div>
+                <button onclick="getdata(2)">為什麼想成為前端、後端、或全端工程師？</button>
+                <div></div>
+                <button onclick="getdata(3)">為了成為軟體工程師，曾經做過什麼努力？</button>
+                <div></div>
+                <button onclick="getdata(4)">如果參與這個計畫，會怎麼安排學習時間？</button>
+                <div></div>
+                <button onclick="getdata(5)">如果參與這個計畫，預期會碰到什麼困難？<div></div>你打算怎麼解決它？</button>
+                <div></div>
+                <button onclick="getdata(6)">是否有想要加入的軟體公司？<div></div>為什麼想加入該公司？</button>
+                <div></div>
+                <button onclick="getdata(7)">想要對我們說的事情？</button>
+                <img src="pig.jpg";/>
+                </div>
+            <div class="box">
+                <div id="content"></div>
+                <div class="menu">謝謝老師觀看，請在左方點選選項!</div>
+            </div>
+           
+        
+         
+        
+    </body>
+</html>
