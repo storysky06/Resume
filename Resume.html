@@ -30,17 +30,6 @@
 
     </style>
     <script type="text/javascript">
-function toggleMenu(){
-	var menu=document.getElementById("menu");
-	menu.classList.toggle("hide");
-	/*
-	if (menu.style.display=="none"){
-		menu.style.display="block"
-	}else{
-		menu.style.display="none"
-	}
-*/
-}
     function getdata(nb){
     var data=new XMLHttpRequest(); 
     data.open("get","http://127.0.0.1:8080/"+nb+".html"); 
